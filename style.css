@@ -1,0 +1,193 @@
+/* ===== RESET & BASE ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f2f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== LAYOUT ===== */
+.cv-wrapper {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    min-height: 700px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    background-color: #3d2e63;
+    color: #ffffff;
+    padding: 40px 28px;
+    text-align: center;
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ffffff33;
+    margin-bottom: 20px;
+}
+
+.sidebar .name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sidebar .role {
+    font-size: 13px;
+    color: #c9b8ee;
+    margin-bottom: 20px;
+}
+
+.side-hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 22px 0;
+}
+
+.side-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #d8cdf2;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.side-list {
+    list-style: none;
+    text-align: left;
+}
+
+.side-list li {
+    font-size: 14px;
+    margin-bottom: 12px;
+    word-break: break-word;
+}
+
+.side-list .icon {
+    display: inline-block;
+    width: 22px;
+}
+
+.side-list a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.side-list a:hover {
+    text-decoration: underline;
+}
+
+/* ===== MAIN CONTENT ===== */
+.content {
+    padding: 45px 50px;
+}
+
+.content-header h1 {
+    font-size: 34px;
+    color: #3d2e63;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.content-header .subtitle {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.block {
+    margin-bottom: 32px;
+}
+
+.block h2 {
+    font-size: 17px;
+    color: #6c4fa1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #eae5f5;
+}
+
+.block p {
+    font-size: 15px;
+    color: #444;
+}
+
+/* Sở thích - hiển thị dạng pill */
+.pill-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill-list li {
+    background: #efe9fa;
+    color: #4b3579;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Kỹ năng */
+.skill-list {
+    list-style: none;
+    counter-reset: skill;
+}
+
+.skill-list li {
+    counter-increment: skill;
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.skill-list li::before {
+    content: counter(skill);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    background: #6c4fa1;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+    .cv-wrapper {
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+
+    .sidebar {
+        text-align: center;
+    }
+
+    .side-title,
+    .side-list {
+        text-align: center;
+    }
+}
